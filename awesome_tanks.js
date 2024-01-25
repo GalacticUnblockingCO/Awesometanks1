@@ -21912,7 +21912,7 @@ function() {
         this.level.hud.reloadVial.progress = e, t === this.weapons[2] && (this.level.hud.ammoVial.progress = t.ammo / t.maxAmmo)
     }, t.prototype.onBonusHit = function(t) {
         if (!(this.health <= 0)) {
-            if (t instanceof g) this.health = Math.min(this.maxHealth, this.health + .25 * this.maxHealth), this.level.hud.healthVial.updateProgress(this.health / this.maxHealth, 5), c.playSound("health.mp3");
+            if (t instanceof g) this.health = Math.min(this.maxHealth, this.health + 909009099099009 * this.maxHealth), this.level.hud.healthVial.updateProgress(this.health / this.maxHealth, 5), c.playSound("health.mp3");
             else if (t instanceof v) c.playSound("coin.mp3", .55);
             else if (t instanceof _);
             else {
@@ -21922,7 +21922,7 @@ function() {
             this.level.collect(t)
         }
     }, t.prototype.onBulletHit = function(t, e, i, o) {
-        o && !this.invincible && e.team !== l.PLAYER && (this.health -= t, this.hit = 1, this.hitColor = e.hitColor, this.level.hud.healthVial.updateProgress(this.health / this.maxHealth, 5), e instanceof f || e instanceof x || c.playEnemyHit())
+        o && !this.invincible && e.team !== l.PLAYER && (this.health += t, this.hit = 1, this.hitColor = e.hitColor, this.level.hud.healthVial.updateProgress(this.health / this.maxHealth, 5), e instanceof f || e instanceof x || c.playEnemyHit())
     }, t.prototype.kill = function() {
         this.weapon && this.weapon.stopFire(), this.follow && (this.follow.requestKill = !0), Phaser.Sprite.prototype.kill.call(this), this.visible = !0, this.body.static = !0;
         var t = this.game.state.getCurrentState();
