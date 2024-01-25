@@ -20910,7 +20910,7 @@ function() {
     }, t.prototype.setHealth = function(t) {
         this.lifebar.lastHealth = this.health = this.maxHealth = t
     }, t.prototype.onBulletHit = function(t, e, i, o) {
-        o && (e instanceof s ? this.health -= t / 3 : (this.health -= t, this.game.state.getCurrentState().revealFogAtLocation(this.body)), this.lifebar.show()), this.hit = 1, this.hitColor = e.hitColor
+        o && (e instanceof s ? this.health += t / 3 : (this.health += t, this.game.state.getCurrentState().revealFogAtLocation(this.body)), this.lifebar.show()), this.hit = 1, this.hitColor = e.hitColor
     }, t.prototype.update = function() {
         this.health <= 0 ? (this.killDelay -= this.game.time.physicsElapsed, this.hit = 1, this.killDelay <= 0 && this.parent && this.kill()) : this.hit > 0 && (this.hit = Math.max(0, this.hit - this.game.time.physicsElapsed / .2), this.tint = i(this.hitColor, this.hit)), this.visible = this.level.isTileVisible(this.position.x, this.position.y, this.tileX, this.tileY)
     }, window.AT.Obstacle = t
