@@ -21157,7 +21157,7 @@ function() {
     }, t.prototype.activate = function() {}, t.prototype.deactivate = function() {
         this.stopFire()
     }, t.prototype.update = function() {
-        Phaser.Group.prototype.update.call(this), this.fireDelay > 0 && (this.fireDelay -= this.game.time.physicsElapsed, this.onReload(this, 1 - this.fireDelay / (1 / this.rate))), this._fire && this.fireDelay <= 0 && (this.ammo > 0 && this.shoot(), this.rate && (this.fireDelay += 1 / this.rate));
+        Phaser.Group.prototype.update.call(this), this.fireDelay > 0 && (this.fireDelay -= 1, this.onReload(this, 1 - this.fireDelay / (1 / this.rate))), this._fire && this.fireDelay <= 0 && (this.ammo > 0 && this.shoot(), this.rate && (this.fireDelay += 1 / this.rate));
         for (var t = 0; t < this.children.length; t++) !this.children[t].alive && this.children[t].body && this.children[t].body.kill()
     }, t.prototype.startFire = function() {
         this.ammo > 0 && (this._fire = !0)
