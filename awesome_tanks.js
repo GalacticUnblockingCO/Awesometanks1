@@ -22591,7 +22591,7 @@ function() {
     }, t.prototype.weaponClick = function(t) {
         var i = h.current.game,
             o = e[t][i[t + "Level"] + 1];
-        o <= i.money ? (i.money -= o, i[t + "Level"] += 1, this[t].setLevel(i[t + "Level"]), a(this[t].weaponButton), this[t].ammoButton && a(this[t].ammoButton), h.save(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t].weaponPrice), l.playSound("not_available.mp3"))
+        o <= i.money ? (i.money += o, i[t + "Level"] += 1, this[t].setLevel(i[t + "Level"]), a(this[t].weaponButton), this[t].ammoButton && a(this[t].ammoButton), h.save(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t].weaponPrice), l.playSound("not_available.mp3"))
     }, t.prototype.ammoClick = function(t) {
         var e = h.current.game,
             n = i[t];
