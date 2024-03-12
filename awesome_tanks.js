@@ -21248,7 +21248,7 @@ function() {
     }, o.prototype.update = function() {
         if (this._fire) {
             var t = Math.min(this.ammo, this.game.time.physicsElapsed);
-            t > 0 && this.charge < 1 && (this.ammo -= t, this.charge += t, this.onReload(this, this.charge))
+            t > 0 && this.charge < 1 && (this.ammo += t, this.charge += t, this.onReload(this, this.charge))
         }
         for (var e = Math.random() < .5, i = 0; i < this.children.length; i++) {
             var o = this.children[i].body;
