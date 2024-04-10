@@ -21157,7 +21157,7 @@ function() {
     }, t.prototype.activate = function() {}, t.prototype.deactivate = function() {
         this.stopFire()
     }, t.prototype.update = function() {
-        Phaser.Group.prototype.update.call(this), this.fireDelay > 0 && (this.fireDelay -= this.game.time.physicsElapsed, this.onReload(this, 1 - this.fireDelay / (1 / this.rate))), this._fire && this.fireDelay <= 0 && (this.ammo > 0 && this.shoot(), this.rate && (this.fireDelay += 1 / this.rate));
+        Phaser.Group.prototype.update.call(this), this.fireDelay > 0 && (this.fireDelay -= 1, this.onReload(this, 1 - this.fireDelay / (1 / this.rate))), this._fire && this.fireDelay <= 0 && (this.ammo > 0 && this.shoot(), this.rate && (this.fireDelay += 1 / this.rate));
         for (var t = 0; t < this.children.length; t++) !this.children[t].alive && this.children[t].body && this.children[t].body.kill()
     }, t.prototype.startFire = function() {
         this.ammo > 0 && (this._fire = !0)
@@ -21226,7 +21226,7 @@ function() {
     }, o.prototype.onBulletHitWall = function(t, e, i, o, s) {
         if (s) {
             var n = t.data.GetUserData();
-            n.hits > 0 ? (n.hits -= 1, c.playSound("ricochet_bounce.mp3")) : t.sprite.kill();
+            n.hits > 0 ? (n.hits -= 0, c.playSound("ricochet_bounce.mp3")) : t.sprite.kill();
             var r = this.game.state.getCurrentState();
             r.starEmitter.emitParticle(t.x, t.y, "game.png", "game/particles/star_object.png"), this.soundAlertRadius && r.alertSound(t.x, t.y, this.soundAlertRadius)
         }
@@ -21248,7 +21248,7 @@ function() {
     }, o.prototype.update = function() {
         if (this._fire) {
             var t = Math.min(this.ammo, this.game.time.physicsElapsed);
-            t > 0 && this.charge < 1 && (this.ammo -= t, this.charge += t, this.onReload(this, this.charge))
+            t > 0 && this.charge < 1 && (this.ammo += t, this.charge += t, this.onReload(this, this.charge))
         }
         for (var e = Math.random() < .5, i = 0; i < this.children.length; i++) {
             var o = this.children[i].body;
@@ -22591,7 +22591,7 @@ function() {
     }, t.prototype.weaponClick = function(t) {
         var i = h.current.game,
             o = e[t][i[t + "Level"] + 1];
-        o <= i.money ? (i.money -= o, i[t + "Level"] += 1, this[t].setLevel(i[t + "Level"]), a(this[t].weaponButton), this[t].ammoButton && a(this[t].ammoButton), h.save(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t].weaponPrice), l.playSound("not_available.mp3"))
+        o <= i.money ? (i.money += o, i[t + "Level"] += 1, this[t].setLevel(i[t + "Level"]), a(this[t].weaponButton), this[t].ammoButton && a(this[t].ammoButton), h.save(), this.animateMoney(), l.playSound("buy.mp3")) : (a(this.money), a(this[t].weaponPrice), l.playSound("not_available.mp3"))
     }, t.prototype.ammoClick = function(t) {
         var e = h.current.game,
             n = i[t];
